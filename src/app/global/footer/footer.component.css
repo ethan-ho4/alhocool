@@ -1,0 +1,73 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+.main {
+  flex: 1 0 auto; 
+}
+
+.footer {
+  background-color: #3b3b3b;
+  color: #fdfcfd;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  flex-shrink: 0; 
+}
+
+.footer-content h4 {
+  margin-top: 50px;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.content{
+  font-size: 1em;
+  /* margin: 20px 0; */
+  margin-left: 100px;
+  margin-right: 100px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+
+/* .footer-content p {
+  font-size: 1em;
+  margin: 5px 0;
+} */
+
+.button {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.joke {
+  font-size: 1.5em;
+}
+
+.footer-joke p {
+  font-size: 1em;
+  margin: 5px 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #e8b923;
+  color: #FDFCFD;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+  /* On hover, change the button's background color */
+  &:hover {
+    background-color: #8f6f1b;
+  }
+}

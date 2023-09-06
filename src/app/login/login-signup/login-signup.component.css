@@ -1,0 +1,73 @@
+.box {
+  width: 400px;
+  height: 400px;
+  padding: 20px;
+  position: relative;  /* changed from absolute */
+  margin: auto;        /* to center the box horizontally */
+  background-color: rgba(71, 71, 71, 0.6);  /* Changed to rgba for opacity */
+  margin-bottom: 100px; /*pushes other component down*/
+}
+
+
+.bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: #FDFCFD;
+  font-family: 'montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.bar div {
+  width: 50%;
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.bar .active {
+  background-color: rgb(176, 143, 38);
+}
+
+.info{
+  color:#FDFCFD;
+}
+
+.requirements{
+  color: #FDFCFD;
+  font-size: 12px;
+}
+
+input[type="email"],
+input[type="password"] {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 5px;
+  box-sizing: border-box;
+  font-family: 'raleway', sans-serif;
+}
+
+.button {
+  font-size: 20px;
+  width: 8em;
+  height: 2em;
+  text-align: center;
+  line-height: 1em;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  position: relative;
+  transition: 0.5s;
+  margin: auto; /* Set the top/bottom margins and center horizontally */
+  display: block; /* Ensures the button takes the full width of its parent */
+  /* border-color: 640F0F; */
+}
+
+.error, .loginSuccess, .success {
+  color: #FDFCFD;
+  height: 50px;  /* or any specific height */
+  /* line-height: 50px; */
+  text-align: center; /* centering the text horizontally */
+}
+
+

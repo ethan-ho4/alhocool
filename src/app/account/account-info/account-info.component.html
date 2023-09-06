@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="information">
+        <div *ngIf="email && password">
+            <p>Email: {{ email }}</p>
+            <p>Password: {{ password }}</p>
+          </div>
+    </div>
+    <div class="logout">
+        <a [routerLink]="['/main']" (click)="onLinkClick()">LOGOUT</a>
+    </div>
+</div>

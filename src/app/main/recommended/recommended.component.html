@@ -1,0 +1,14 @@
+<div class="header">
+    <p>DELVE INTO TIMELESS SELECTIONS</p>
+</div>
+
+<div class="container">
+    <a [href]="item.link" target="_blank" *ngFor="let item of data">
+      <div class="rectangle">
+        <img [src]="item.imageUrl" alt="Rectangle Image">
+        <div class="text-title">{{ item.title }}</div>
+        <div class="text-content">{{ item.text }}</div>
+      </div>
+    </a>
+  </div>
+  

@@ -1,0 +1,32 @@
+.list {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 40px;
+  gap: 20px;
+}
+
+.label-container {
+  flex: 0 0 calc(33.33% - 20px); 
+  padding: 15px;
+  background-color: #dfdfdf;
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.label-container:hover {
+  background-color: #999999;
+}
+
+.label-container a {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Use the parent's color */
+}
+
+.item-label {
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+}

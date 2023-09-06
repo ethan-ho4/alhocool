@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="buttons">
+        <button 
+          [class.active]="displayedComponent === 'overview'" 
+          (click)="handleButtonClick('overview')">OVERVIEW</button>
+
+        <button 
+          [class.active]="displayedComponent === 'types'" 
+          (click)="handleButtonClick('types')">VARIETIES</button>
+
+        <button 
+          [class.active]="displayedComponent === 'food'" 
+          (click)="handleButtonClick('food')">FOODS TO PAIR</button>
+
+        <button 
+          [class.active]="displayedComponent === 'history'" 
+          (click)="handleButtonClick('history')">HISTORY</button>
+
+        <button 
+          [class.active]="displayedComponent === 'process'" 
+          (click)="handleButtonClick('process')">PROCESS</button>
+
+        <button 
+          [class.active]="displayedComponent === 'brands'" 
+          (click)="handleButtonClick('brands')">BIG BRANDS</button>
+    </div>
+
+    <!-- Assuming you have components with selectors like the below -->
+    <app-wine-overview *ngIf="displayedComponent === 'overview'"></app-wine-overview>
+    <app-wine-types *ngIf="displayedComponent === 'types'"></app-wine-types>
+    <app-wine-food *ngIf="displayedComponent === 'food'"></app-wine-food>
+    <app-wine-history *ngIf="displayedComponent === 'history'"></app-wine-history>
+    <app-wine-process *ngIf="displayedComponent === 'process'"></app-wine-process>
+    <app-wine-brands *ngIf="displayedComponent === 'brands'"></app-wine-brands>
+</div>

@@ -1,0 +1,26 @@
+.container {
+    padding: 0;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column; /* Stack the children (header and content) vertically */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+
+.header {
+    text-align: center; /* Centered the text */
+    font-size: 45px;
+    font-family: 'Montserrat', sans-serif;
+    color: #FDFCFD;
+    margin-bottom: 10px; /* Adds some spacing between header and content. Adjust as necessary. */
+}
+
+.content {
+    text-align: center; /* Centered the text */
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    color: #FDFCFD;
+}

@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="buttons">
+        <button 
+          [class.active]="displayedComponent === 'overview'" 
+          (click)="handleButtonClick('overview')">OVERVIEW</button>
+
+        <button 
+          [class.active]="displayedComponent === 'types'" 
+          (click)="handleButtonClick('types')">VARIETIES</button>
+
+        <button 
+          [class.active]="displayedComponent === 'food'" 
+          (click)="handleButtonClick('food')">FOODS TO PAIR</button>
+
+        <button 
+          [class.active]="displayedComponent === 'history'" 
+          (click)="handleButtonClick('history')">HISTORY</button>
+
+        <button 
+          [class.active]="displayedComponent === 'process'" 
+          (click)="handleButtonClick('process')">PROCESS</button>
+
+        <button 
+          [class.active]="displayedComponent === 'brands'" 
+          (click)="handleButtonClick('brands')">BIG BRANDS</button>
+    </div>
+
+    <!-- Assuming you have components with selectors like the below -->
+    <app-rice-alcohol-overview *ngIf="displayedComponent === 'overview'"></app-rice-alcohol-overview>
+    <app-rice-alcohol-types *ngIf="displayedComponent === 'types'"></app-rice-alcohol-types>
+    <app-rice-alcohol-food *ngIf="displayedComponent === 'food'"></app-rice-alcohol-food>
+    <app-rice-alcohol-history *ngIf="displayedComponent === 'history'"></app-rice-alcohol-history>
+    <app-rice-alcohol-process *ngIf="displayedComponent === 'process'"></app-rice-alcohol-process>
+    <app-rice-alcohol-brands *ngIf="displayedComponent === 'brands'"></app-rice-alcohol-brands>
+</div>
