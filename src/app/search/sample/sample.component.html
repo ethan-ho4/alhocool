@@ -1,0 +1,18 @@
+<app-search-bar (searchChanged)="handleSearch($event)"></app-search-bar>
+
+<div class="list">
+    <div class="label-container" *ngFor="let item of filteredItems()">
+        <ng-container *ngIf="isExternalLink(item.link); else internalLink">
+            <!-- For external links -->
+            <a [href]="item.link">
+                <div class="item-label">{{item.label}}</div>
+            </a>
+        </ng-container>
+        <ng-template #internalLink>
+            <!-- For internal links -->
+            <a [routerLink]="item.link">
+                <div class="item-label">{{item.label}}</div>
+            </a>
+        </ng-template>
+    </div>
+</div>

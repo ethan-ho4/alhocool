@@ -1,0 +1,25 @@
+<div class="header" id="myheader">
+    <div class="logo-title-container">
+        <a [routerLink]="['/main']" (click)="onLinkClick()">
+            <h1 class="title">ALHOCOOL</h1>
+        </a>
+    </div>
+    <nav class="nav-links">
+        <div class="explore-dropdown">
+            <button class="explore-button" disabled>EXPLORE</button>
+            <div class="dropdown-content">
+                <a [routerLink]="['/beer']" (click)="onLinkClick()">Beers</a>
+                <a [routerLink]="['/wine']" (click)="onLinkClick()">Wines</a>
+                <a [routerLink]="['/spirit']" (click)="onLinkClick()">Spirits</a>
+                <a [routerLink]="['/liqueurs-cordial']" (click)="onLinkClick()">Liqueurs & Cordials</a>
+                <a [routerLink]="['/rice-based-alcohol']" (click)="onLinkClick()">Rice Based Alcohols</a>
+                <a [routerLink]="['/search']" (click)="onLinkClick()">Search</a>
+            </div>
+        </div>
+        <a [routerLink]="['/about']" class="about" (click)="onLinkClick()">ABOUT</a>
+        
+        <!-- Conditional display based on isLoggedIn state -->
+        <a *ngIf="!isLoggedIn" [routerLink]="['/login-signup']" class="login" (click)="onLinkClick()">LOGIN/SIGNUP</a>
+        <a *ngIf="isLoggedIn" [routerLink]="['/account']" class="account" (click)="onLinkClick()">ACCOUNT</a>
+    </nav>
+</div>

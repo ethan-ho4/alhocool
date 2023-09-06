@@ -1,0 +1,40 @@
+/* Center the search bar in the middle of the viewport */
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;  /* adjust this if you want to change the height */
+  }
+  
+  .search-container {
+    position: relative;
+    width: 50%;  /* width of the container */
+    max-width: 800px;  /* you can set a maximum width if you don't want it too wide on large screens */
+  }
+  
+  input {
+    width: 100%;
+    padding: 3px 40px 3px 15px;  /* decreased padding-top and padding-bottom for thinner appearance */
+    font-size: 1.4rem; 
+    border: 1px solid #ccc;
+    border-radius: 4px;  
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+  }
+  
+  
+  .clear-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.5rem;  /* increased size for the x button */
+    color: #555;
+    outline: none;
+  }
+  

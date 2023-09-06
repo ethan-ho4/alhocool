@@ -1,0 +1,134 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+  top: -90px;
+  left: 0;
+  width: 100%;
+  height: 580px; 
+}
+
+.carousel-item {
+  position: relative;
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.d-block {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  color: #FDFCFD;
+}
+
+
+.slide-content {
+  position: absolute;
+  color: #FDFCFD;
+}
+
+.slide-content h2 {
+  width: 100%;
+  white-space: nowrap;
+  margin: 0;
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.slide-content p {
+  font-size: 30px;
+  margin: 0;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.slide-content button {
+  background-color: transparent;
+  color: #FDFCFD;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border: 2px solid #e8b923;
+  padding: 8px 14px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.slide-content-0{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 850px;
+  height: 250px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgb(204, 204, 204, 0.5);
+  padding: 20px 40px;
+}
+
+.slide-content-1{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 900px;
+  height: 250px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgb(204, 204, 204, 0.5);
+  padding: 20px 40px;
+}
+
+.slide-content-2{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 900px;
+  height: 250px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgb(204, 204, 204, 0.5);
+  padding: 20px 40px;
+}
+
+.slide-content-3{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 900px;
+  height: 250px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgb(204, 204, 204, 0.5);
+  padding: 20px 40px;
+}
+.slide-content-4 {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 900px;
+  height: 250px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: rgb(204, 204, 204, 0.5);
+  padding: 20px 40px;
+}

@@ -1,0 +1,22 @@
+.title{
+    text-align: left;
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+    color: #FDFCFD;
+}
+
+.content{
+    text-align: left;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    color: #FDFCFD;
+}
+
+.title-baileys,
+.title-cointreau,
+.title-amaretto,
+.title-chambord,
+.title-sambuca,
+.title-jagermeister{
+    font-size: 40px;
+}

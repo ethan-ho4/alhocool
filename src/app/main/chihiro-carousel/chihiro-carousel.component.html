@@ -1,0 +1,18 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div *ngFor="let slide of slides; let i = index" class="carousel-item" [ngClass]="{'active': i === 0}">
+      <img class="d-block w-100" [src]="slide.src" alt="{{slide.title}}">
+      <div [ngClass]="['slide-content', 'slide-content-' + i]">
+        <h2>{{slide.title}}</h2>
+        <p>{{slide.subtitle}}</p>
+        <button (click)="navigateToExplore(slide.link)">Learn More</button>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
+</div>

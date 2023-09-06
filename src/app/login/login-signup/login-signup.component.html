@@ -1,0 +1,30 @@
+<div class="box">
+  <div class="bar">
+    <div (click)="switchMode(false)" [class.active]="!isLoginMode">Sign Up</div>
+    <div (click)="switchMode(true)" [class.active]="isLoginMode">Login</div>
+  </div>
+
+  <div *ngIf="isLoginMode; else signupFormTemplate">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <p class="info">Enter your email address</p>
+      <input type="email" formControlName="email" placeholder="Email" autocomplete="off">
+      <p class="info">Enter your password</p>
+      <input type="password" formControlName="password" placeholder="Password" autocomplete="off">
+      <button type="submit" class="button" [disabled]="loginForm.invalid">Login</button>
+      <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+    </form>
+  </div>
+
+  <ng-template #signupFormTemplate>
+    <form [formGroup]="signupForm" (ngSubmit)="signup()">
+      <p class="info">Please put a valid email address</p>
+      <input type="email" formControlName="email" placeholder="Email" autocomplete="off">
+      <span class="info">Create a password </span>
+      <span class="requirements">(*Must be at least 6 characters long)</span>
+      <input type="password" formControlName="password" placeholder="Password" autocomplete="off">
+      <input type="password" formControlName="confirmPassword" placeholder="Confirm Password" autocomplete="off">
+      <button type="submit" class="button" [disabled]="signupForm.invalid">Sign Up</button>
+      <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+    </form>
+  </ng-template>
+</div>

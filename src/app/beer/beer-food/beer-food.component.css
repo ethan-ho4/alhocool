@@ -1,0 +1,22 @@
+.title{
+    text-align: left;
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+    color: #FDFCFD;
+}
+
+.content{
+    text-align: left;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    color: #FDFCFD;
+}
+
+.title-lagner,
+.title-ale,
+.title-stout,
+.title-ipa,
+.title-pilsner,
+.title-wheat-beer{
+    font-size: 40px;
+}

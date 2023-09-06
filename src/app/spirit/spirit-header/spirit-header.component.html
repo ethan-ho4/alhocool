@@ -1,0 +1,36 @@
+<p>spirit-header works!</p>
+<div class="container">
+    <div class="buttons">
+        <button 
+          [class.active]="displayedComponent === 'overview'" 
+          (click)="handleButtonClick('overview')">OVERVIEW</button>
+
+        <button 
+          [class.active]="displayedComponent === 'types'" 
+          (click)="handleButtonClick('types')">VARIETIES</button>
+
+        <button 
+          [class.active]="displayedComponent === 'food'" 
+          (click)="handleButtonClick('food')">FOODS TO PAIR</button>
+
+        <button 
+          [class.active]="displayedComponent === 'history'" 
+          (click)="handleButtonClick('history')">HISTORY</button>
+
+        <button 
+          [class.active]="displayedComponent === 'process'" 
+          (click)="handleButtonClick('process')">PROCESS</button>
+
+        <button 
+          [class.active]="displayedComponent === 'brands'" 
+          (click)="handleButtonClick('brands')">BIG BRANDS</button>
+    </div>
+
+    <!-- Assuming you have components with selectors like the below -->
+    <app-spirit-overview *ngIf="displayedComponent === 'overview'"></app-spirit-overview>
+    <app-spirit-types *ngIf="displayedComponent === 'types'"></app-spirit-types>
+    <app-spirit-food *ngIf="displayedComponent === 'food'"></app-spirit-food>
+    <app-spirit-history *ngIf="displayedComponent === 'history'"></app-spirit-history>
+    <app-spirit-process *ngIf="displayedComponent === 'process'"></app-spirit-process>
+    <app-spirit-brands *ngIf="displayedComponent === 'brands'"></app-spirit-brands>
+</div>

@@ -1,0 +1,22 @@
+.title{
+    text-align: left;
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+    color: #FDFCFD;
+}
+
+.content{
+    text-align: left;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    color: #FDFCFD;
+}
+
+.title-diageo,
+.title-pernod,
+.title-beam,
+.title-bacardi,
+.title-brown,
+.title-lvmh{
+    font-size: 40px;
+}

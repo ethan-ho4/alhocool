@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 400px; /* This will make sure the container takes the full viewport height */
+    background-color: lightgray;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    max-width: 400px; /* You can adjust this value as needed */
+    padding: 20px;
+    background-color: #616060; /* Slightly lighter than the container for a subtle contrast */
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.information p {
+    color: white;
+    font-size: 16px;
+    margin: 10px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 200px; /* You can adjust this value as needed */
+}
+
+.logout a {
+    display: block;
+    padding: 10px 20px;
+    background-color: gray;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.logout a:hover {
+    background-color: darkgray;
+}
