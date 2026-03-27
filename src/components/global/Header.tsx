@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { auth } from '../../firebase';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -7,7 +7,9 @@ import './Header.css';
 
 export default function Header() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isExploreOpen, setIsExploreOpen] = useState(false);
     const { theme, toggleTheme } = useTheme();
+    const exploreRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, user => {
@@ -16,7 +18,29 @@ export default function Header() {
         return unsubscribe;
     }, []);
 
+    useEffect(() => {
+        const onDocumentClick = (event: MouseEvent) => {
+            if (!exploreRef.current?.contains(event.target as Node)) {
+                setIsExploreOpen(false);
+            }
+        };
+
+        const onEscape = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                setIsExploreOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', onDocumentClick);
+        document.addEventListener('keydown', onEscape);
+        return () => {
+            document.removeEventListener('mousedown', onDocumentClick);
+            document.removeEventListener('keydown', onEscape);
+        };
+    }, []);
+
     const onLinkClick = () => {
+        setIsExploreOpen(false);
         window.scrollTo(0, 0);
     };
 
@@ -28,9 +52,25 @@ export default function Header() {
                 </Link>
             </div>
             <nav className="nav-links">
-                <div className="explore-dropdown">
-                    <button className="explore-button" disabled>EXPLORE</button>
-                    <div className="dropdown-content">
+                <div className="explore-dropdown" ref={exploreRef}>
+                    <button
+                        className="explore-button"
+                        type="button"
+                        aria-expanded={isExploreOpen}
+                        aria-haspopup="menu"
+                        aria-controls="explore-menu"
+                        onClick={() => setIsExploreOpen((prev) => !prev)}
+                        onMouseEnter={() => setIsExploreOpen(true)}
+                    >
+                        Explore
+                    </button>
+                    <div
+                        id="explore-menu"
+                        className={`dropdown-content ${isExploreOpen ? 'open' : ''}`}
+                        role="menu"
+                        onMouseEnter={() => setIsExploreOpen(true)}
+                        onMouseLeave={() => setIsExploreOpen(false)}
+                    >
                         <Link to="/beer" onClick={onLinkClick}>Beers</Link>
                         <Link to="/wine" onClick={onLinkClick}>Wines</Link>
                         <Link to="/spirit" onClick={onLinkClick}>Spirits</Link>
@@ -39,12 +79,12 @@ export default function Header() {
                         <Link to="/search" onClick={onLinkClick}>Search</Link>
                     </div>
                 </div>
-                <Link to="/about" className="about" onClick={onLinkClick}>ABOUT</Link>
+                <Link to="/about" className="about" onClick={onLinkClick}>About</Link>
                 
-                {!isLoggedIn && <Link to="/login-signup" className="login" onClick={onLinkClick}>LOGIN/SIGNUP</Link>}
-                {isLoggedIn && <Link to="/account" className="account" onClick={onLinkClick}>ACCOUNT</Link>}
+                {!isLoggedIn && <Link to="/login-signup" className="login" onClick={onLinkClick}>Sign In</Link>}
+                {isLoggedIn && <Link to="/account" className="account" onClick={onLinkClick}>Account</Link>}
 
-                <button className="theme-toggle" onClick={toggleTheme}>
+                <button className="theme-toggle" type="button" aria-label="Toggle theme" onClick={toggleTheme}>
                   {theme === 'light' ? '🌙' : '☀️'}
                 </button>
             </nav>

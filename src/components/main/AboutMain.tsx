@@ -7,18 +7,25 @@ export default function AboutMain() {
 
   return (
     <div className="container-about-main">
-        <img src="/assets/images/main/about-main-images/cheers.jpg" alt="cheers image" className="image-about" />
-        <div className="background-about" ref={revealRef}>
-            <div className="text-content-about reveal reveal-right glass-panel">
+        <img src="/assets/images/main/about-main-images/cheers.jpg" alt="Friends toasting drinks together" className="image-about" />
+        <div className="background-about">
+            <div className="text-content-about reveal reveal-right glass-panel" ref={revealRef}>
                 <p className="heading-about">THE SPIRIT OF ALHOCOOL</p>
                 <div className="content-about">
                     <p className="description1-about">
-                      "At Alhocool, every drop tells a story. We’re on a quest to demystify the world’s most iconic spirits, blending rich heritage with cutting-edge AI to bring you tales that are as intoxicating as the drinks themselves.
+                      At Alhocool, every drop tells a story. We demystify the world's most iconic drinks by blending rich heritage with modern AI-powered insights.
                     </p>
                     <p className="description2-about">
-                      From the misty highlands of Scotland to the sun-drenched vineyards of Bordeaux, join us as we explore the essence of craftsmanship and the joy of shared knowledge."
+                      From the misty highlands of Scotland to the sun-drenched vineyards of Bordeaux, discover the craft, culture, and people behind every pour.
                     </p>
-                    <Link className="button-about btn-outline" to="/about" onClick={() => window.scrollTo(0, 0)}>discover our story</Link>
+                    <div className="about-actions">
+                      <Link className="button-about btn-outline" to="/about" onClick={() => window.scrollTo(0, 0)}>
+                        Discover our story
+                      </Link>
+                      <Link className="button-about btn-primary" to="/spirit" onClick={() => window.scrollTo(0, 0)}>
+                        Browse spirits
+                      </Link>
+                    </div>
                 </div>
             </div>
         </div>

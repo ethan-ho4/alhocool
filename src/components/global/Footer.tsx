@@ -1,33 +1,44 @@
 import useScrollReveal from '../../hooks/useScrollReveal';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 export default function Footer() {
-    const revealRef = useScrollReveal();
+    const contentRevealRef = useScrollReveal();
+    const actionsRevealRef = useScrollReveal();
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (
-        <footer className="footer" ref={revealRef}>
-          <div className="footer-content reveal reveal-scale">
-              <h4 className="title text-shimmer">Before You Stumble Away...</h4>
+        <footer className="footer">
+          <div className="footer-content reveal reveal-scale" ref={contentRevealRef}>
+              <h4 className="title text-shimmer">Thank You for Visiting Alhocool</h4>
               <p className="content">
-                Every bottle at Alhocool carries a spirit, and behind each spirit is a tale worth telling. 
-                Our stories are woven through a blend of timeless tradition and advanced AI, 
-                crafting a journey as rich as the libations themselves. 
-                As you sip, remember: while our tales are digital, the joy and craftsmanship are very real. 
-                Drink responsibly, wander often, and always return for another chapter.
+                Every bottle has a story worth understanding. At Alhocool, we combine historical context and AI-assisted research
+                to make the world of drinks easier to explore with confidence.
                 <br/><br/>
-                <span className="footer-cheers">🍻 Cheers from the Alhocool crew! 🍷</span>
+                <span className="footer-cheers">Please enjoy responsibly and continue exploring.</span>
               </p>
           </div>
           
-          <div className="footer-actions reveal reveal-scale">
-              <button className="button pulse-glow" onClick={scrollToTop}>Hic! Take me to the top!</button>
-              <div className="footer-joke">
-                  <p className="joke">Parting Gag:</p>
-                  <p className="joke-text">"Why did the beer file a police report? It got mugged!"</p>
+          <div className="footer-actions reveal reveal-scale" ref={actionsRevealRef}>
+              <button className="button pulse-glow" type="button" onClick={scrollToTop}>Back to top</button>
+              <div className="footer-note">
+                  <p className="note-title">Research-Driven Content</p>
+                  <p className="note-text">Our content is educational and intended for responsible, legal-age audiences.</p>
               </div>
+          </div>
+
+          <div className="footer-bottom">
+            <p className="footer-legal">
+              © {new Date().getFullYear()} Alhocool. All rights reserved.
+            </p>
+            <div className="footer-bottom-links">
+              <Link to="/about" onClick={() => window.scrollTo(0, 0)}>About</Link>
+              <Link to="/search" onClick={() => window.scrollTo(0, 0)}>Search</Link>
+              <Link to="/login-signup" onClick={() => window.scrollTo(0, 0)}>Account Access</Link>
+              <a href="mailto:support@alhocool.com">Contact</a>
+            </div>
           </div>
         </footer>
     );

@@ -1,11 +1,9 @@
-import AboutTitle from '../components/about/AboutTitle';
-import AboutContent from '../components/about/AboutContent';
+import AboutMain from '../components/main/AboutMain';
 
 export default function AboutPage() {
   return (
     <>
-      <AboutTitle />
-      <AboutContent />
+      <AboutMain />
     </>
   );
 }

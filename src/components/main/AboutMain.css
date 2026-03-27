@@ -62,7 +62,13 @@
 
 .button-about {
   align-self: flex-start;
-  margin-top: 10px;
+  margin-top: 4px;
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 /* Responsive adjustments */
@@ -84,5 +90,14 @@
   }
   .text-content-about {
     padding: 40px;
+  }
+
+  .about-actions {
+    width: 100%;
+  }
+
+  .about-actions .button-about {
+    flex: 1 1 220px;
+    justify-content: center;
   }
 }

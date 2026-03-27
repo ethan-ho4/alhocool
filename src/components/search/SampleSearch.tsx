@@ -1,77 +1,114 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useMemo, useState } from 'react';
 import SearchBar from './SearchBar';
+import { SEARCH_ITEMS, type ItemCategory } from './searchItems';
 import './SampleSearch.css';
 
 export default function SampleSearch() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [activeCategory, setActiveCategory] = useState<ItemCategory | 'All'>('All');
 
-  const items = [
-    { label: 'LAGER', link: '/blank-page' },     
-    { label: 'ALE', link: '/blank-page' },
-    { label: 'STOUT', link: '/blank-page' },
-    { label: 'INDIA PALE ALE', link: '/blank-page' },
-    { label: 'PILSNER', link: '/blank-page' },
-    { label: 'WHEAT BEER', link: '/blank-page' },
-    { label: 'RED WINE', link: '/blank-page' },
-    { label: 'WHITE WINE', link: '/blank-page' },
-    { label: 'ROSÉ', link: '/blank-page' },
-    { label: 'SPARKLING WINE', link: '/blank-page' },
-    { label: 'DESSERT WINE', link: '/blank-page' },
-    { label: 'FORTIFIED WINE', link: '/blank-page' },
-    { label: 'WHISKEY', link: '/blank-page' },
-    { label: 'VODKA', link: '/blank-page' },
-    { label: 'RUM', link: '/blank-page' },
-    { label: 'TEQUILA & MEZCAL', link: '/blank-page' },
-    { label: 'GIN', link: '/blank-page' },
-    { label: 'BRANDY', link: '/blank-page' },
-    { label: 'BAILEYS IRISH CREAM', link: '/blank-page' },
-    { label: 'COINTREAU', link: '/blank-page' },
-    { label: 'AMARETTO', link: '/blank-page' },
-    { label: 'CHAMBORD', link: '/blank-page' },
-    { label: 'SAMBUCA', link: '/blank-page' },
-    { label: 'JÄGERMEISTER', link: '/blank-page' },
-    { label: 'SAKE', link: '/blank-page' },
-    { label: 'SOJU', link: '/blank-page' },
-    { label: 'MIJIU', link: '/blank-page' },
-    { label: 'RƯỢU CẦN', link: '/blank-page' },
-    { label: 'LAO-LAO', link: '/blank-page' },
-    { label: 'TAPUY', link: '/blank-page' }
-  ];
+  const items = SEARCH_ITEMS;
+  const categories: Array<ItemCategory | 'All'> = ['All', 'Beer', 'Wine', 'Spirit', 'Liqueur', 'Rice Alcohol'];
 
   const handleSearchChange = (term: string) => {
     setSearchTerm(term);
   };
 
-  const filteredItems = items.filter(item => 
-    item.label.toLowerCase().includes(searchTerm.toLowerCase())
+  const normalizedTerm = searchTerm.trim().toLowerCase();
+  const filteredItems = useMemo(
+    () =>
+      items.filter((item) => {
+        const matchCategory = activeCategory === 'All' || item.category === activeCategory;
+        const haystack = [
+          item.label,
+          item.blurb,
+          item.category,
+          item.nonAlcoholicRecipe,
+          item.imageAlt,
+        ]
+          .join(' ')
+          .toLowerCase();
+        const matchTerm = !normalizedTerm || haystack.includes(normalizedTerm);
+        return matchCategory && matchTerm;
+      }),
+    [items, activeCategory, normalizedTerm]
   );
-
-  const isExternalLink = (link: string) => {
-    return link.startsWith('http://') || link.startsWith('https://');
-  };
 
   return (
     <>
       <div className="search-bar-wrapper">
-        <SearchBar searchTerm={searchTerm} onSearchChange={handleSearchChange} />
+        <SearchBar
+          searchTerm={searchTerm}
+          onSearchChange={handleSearchChange}
+          resultCount={filteredItems.length}
+          totalCount={items.length}
+        />
       </div>
 
-      <div className="list">
-          {filteredItems.map((item, index) => (
-            <div className="label-container" key={index}>
-                {isExternalLink(item.link) ? (
-                    <a href={item.link}>
-                        <div className="item-label">{item.label}</div>
-                    </a>
-                ) : (
-                    <Link to={item.link}>
-                        <div className="item-label">{item.label}</div>
-                    </Link>
-                )}
-            </div>
-          ))}
+      <div className="search-filter-row">
+        {categories.map((category) => (
+          <button
+            key={category}
+            type="button"
+            className={`filter-chip ${activeCategory === category ? 'active' : ''}`}
+            onClick={() => setActiveCategory(category)}
+          >
+            {category}
+          </button>
+        ))}
       </div>
+
+      {filteredItems.length === 0 ? (
+        <div className="empty-state glass-panel">
+          <h3>No matches found</h3>
+          <p>Try a broader term like &quot;wine&quot;, &quot;gin&quot;, or reset filters.</p>
+          <button
+            type="button"
+            className="btn-outline empty-reset"
+            onClick={() => {
+              setSearchTerm('');
+              setActiveCategory('All');
+            }}
+          >
+            Reset search
+          </button>
+        </div>
+      ) : (
+        <div className="list">
+          {filteredItems.map((item, index) => (
+            <article
+              className="label-container glass-panel"
+              key={`${item.label}-${index}`}
+              tabIndex={0}
+              role="group"
+              aria-label={`${item.label}: ${item.category}. Hover or focus for full details and non-alcoholic recipe.`}
+            >
+              <div className="item-image-wrap" aria-hidden="true">
+                <img src={item.imageUrl} alt={item.imageAlt} loading="lazy" decoding="async" />
+              </div>
+              <div className="item-card-preview">
+                <div className="item-category">{item.category}</div>
+                <div className="item-label">{item.label}</div>
+                <p className="item-blurb">{item.blurb}</p>
+                <p className="item-hover-hint">Hover, focus, or tap the card for the full recipe</p>
+              </div>
+
+              <div className="item-hover-overlay" aria-hidden="true">
+                <div className="item-hover-inner">
+                  <div className="item-category">{item.category}</div>
+                  <h3 className="item-hover-title">{item.label}</h3>
+                  <p className="item-hover-blurb">{item.blurb}</p>
+                  <p className="item-hover-image-note">{item.imageAlt}</p>
+                  <div className="item-hover-recipe">
+                    <span className="recipe-label">Non-alcoholic flavor</span>
+                    <p className="recipe-text">{item.nonAlcoholicRecipe}</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      )}
     </>
   );
 }
