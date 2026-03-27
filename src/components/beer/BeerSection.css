@@ -1,0 +1,36 @@
+.beer-section-container {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -50px;
+}
+
+.beer-section-container .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.beer-section-container .buttons button {
+    padding: 15px 15px;
+    width: 200px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #CCCCCC;
+    color: #FDFCFD;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.beer-section-container .buttons button:hover {
+    background-color: #2a2a2a;
+}
+
+.beer-section-container .buttons button.active {
+    background-color: #2a2a2a;
+}

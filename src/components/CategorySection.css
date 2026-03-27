@@ -1,0 +1,115 @@
+/* Shared CSS for all category Section components */
+/* Used by: SpiritSection, BeerSection, WineSection, LiqueurSection, RiceAlcoholSection */
+
+.category-section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 32px 80px;
+  background-color: var(--bg-color);
+  min-height: 60vh;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+/* Tab nav bar */
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 48px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.category-tabs button {
+  padding: 10px 24px;
+  font-size: 12px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.category-tabs button:hover {
+  color: var(--text-main);
+  background: var(--glass-border);
+}
+
+.category-tabs button.active {
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-hover));
+  color: var(--bg-color);
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.35);
+}
+
+/* Tab content area */
+.category-content {
+  width: 100%;
+  max-width: 900px;
+  animation: contentFadeIn 0.35s ease;
+}
+
+@keyframes contentFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Typography within content panels */
+.category-content .title,
+.category-content [class*="-title"] {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(24px, 3vw, 40px) !important;
+  font-weight: 700 !important;
+  background: linear-gradient(to right, #fcd34d, #d4af37);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 24px !important;
+  transition: all 0.3s ease;
+}
+
+.category-content .content,
+.category-content [class*="-content"],
+.category-content p {
+  font-family: var(--font-body) !important;
+  font-size: 17px !important;
+  line-height: 1.8 !important;
+  color: var(--text-muted) !important;
+  text-align: left;
+  transition: color 0.3s ease;
+}
+
+/* Sub-titles (brand names, drink type names) */
+.category-content [class*="title-"],
+.category-content .closing {
+  font-family: var(--font-heading) !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  color: var(--accent-gold) !important;
+  -webkit-text-fill-color: var(--accent-gold) !important;
+  margin-top: 32px !important;
+  margin-bottom: 8px !important;
+  transition: all 0.3s ease;
+}
+
+.category-content .closing {
+  font-size: 16px !important;
+  color: var(--text-muted) !important;
+  -webkit-text-fill-color: var(--text-muted) !important;
+  font-style: italic;
+  border-top: 1px solid var(--glass-border);
+  padding-top: 24px;
+  margin-top: 32px !important;
+}

@@ -1,0 +1,22 @@
+.rice-alcohol-process-title {
+    text-align: left;
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+    color: #FDFCFD;
+}
+
+.rice-alcohol-process-content {
+    text-align: left;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    color: #FDFCFD;
+}
+
+.title-sake,
+.title-soju,
+.title-mijiu,
+.title-roucan,
+.title-laolao,
+.title-tapuy {
+    font-size: 40px;
+}

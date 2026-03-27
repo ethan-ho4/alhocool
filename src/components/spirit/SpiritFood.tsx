@@ -1,0 +1,48 @@
+import './SpiritFood.css';
+
+export default function SpiritFood() {
+  return (
+    <div className="spirit-food-container">
+        <p className="spirit-food-title">The Perfect Pair: Spirits & Bites</p>
+        <div className="spirit-food-content">
+            <div className="whiskey">
+                <p className="title-whiskey">WHISKEY</p>
+                <p className="vibe-whiskey">The Vibe: A rustic cabin, the warmth of a fireplace, and the rich aroma of aged wood.</p>
+                <p className="content-whiskey">Perfect Pairings: Whiskey's deep and complex flavors shine when paired with a cheese platter, especially blue cheese and aged cheddar. The smoky undertones complement BBQ ribs, pulled pork sandwiches, and grilled steaks. The sweet notes elevate dark chocolates, caramel desserts, and even apple pies, creating a harmonious blend of tastes.<br/><br/></p>
+            </div>
+
+            <div className="vodka">
+                <p className="title-vodka">VODKA</p>
+                <p className="vibe-vodka">The Vibe: A pristine winter landscape, the sparkle of fresh snow, and the elegance of simplicity.</p>
+                <p className="content-vodka">Perfect Pairings: Vodka's clean and neutral profile is the ideal match for luxurious caviar, enhancing its briny flavors. It also pairs beautifully with smoked salmon blinis, pickled vegetables, and creamy potato salads. Its crispness cuts through the richness of creamy pasta dishes and blintzes, adding a refreshing touch.<br/><br/></p>
+            </div>
+
+            <div className="rum">
+                <p className="title-rum">RUM</p>
+                <p className="vibe-rum">The Vibe: A sun-kissed beach, the rhythm of steel drums, and the joy of island life.</p>
+                <p className="content-rum">Perfect Pairings: Rum's tropical essence is a delightful companion for fruit salads, especially those with mangoes, pineapples, and coconuts. Its sweetness complements the spicy flavors of jerk chicken, coconut shrimp, and banana fritters. For dessert, a rich chocolate mousse, pineapple upside-down cake, or a caramel flan becomes heavenly with a sip of rum.<br/><br/></p>
+            </div>
+
+            <div className="tequila">
+                <p className="title-tequila">TEQUILA & MEZCAL</p>
+                <p className="vibe-tequila">The Vibe: A vibrant fiesta, colorful papel picado, and the spirit of celebration.</p>
+                <p className="content-tequila">Perfect Pairings: The boldness of Tequila and Mezcal stands up to spicy tacos, enchiladas, and guacamole. They enhance the flavors of chili, lime, and even grilled vegetables. Fresh ceviche, with its citrusy notes, is elevated with a sip of these spirits. And for a sweet treat, tangy tamarind candies, churros, or a slice of lime pie make for a delightful pairing.<br/><br/></p>
+            </div>
+
+            <div className="gin">
+                <p className="title-gin">GIN</p>
+                <p className="vibe-gin">The Vibe: A botanical garden, the scent of blooming flowers, and the serenity of nature.</p>
+                <p className="content-gin">Perfect Pairings: Gin, with its herbal notes, pairs wonderfully with cured meats like prosciutto and salami. Soft cheeses, such as brie or goat cheese, complement its botanicals. For a main course, consider seafood dishes like seared scallops or grilled fish. For dessert, a lemon sorbet, citrusy tart, or even a gin-infused berry compote is the perfect match, enhancing gin's zesty undertones.<br/><br/></p>
+            </div>
+
+            <div className="brandy">
+                <p className="title-brandy">BRANDY</p>
+                <p className="vibe-brandy">The Vibe: A luxurious chateau, the elegance of a ballroom, and the charm of history.</p>
+                <p className="content-brandy">Perfect Pairings: Brandy's velvety richness is a match made in heaven for foie gras, adding depth to its flavors. Creamy pastries, like éclairs or mille-feuille, are elevated with a sip of brandy. For a fruity touch, a berry tart, poached pears, or even a brandy-infused fruitcake pairs beautifully, creating a symphony of flavors.<br/><br/></p>
+            </div>
+
+            <p className="closing">From the rustic charm of whiskey to the tropical allure of rum, spirits bring a world of flavors to the table. When paired with the right dishes, they enhance and elevate the culinary experience, creating moments of pure epicurean delight. So, the next time you pour a glass, remember to complement it with the perfect bite. Here's to the art of pairing and the joy of gastronomic adventures! 🍷🍽️🎉</p>
+        </div>
+    </div>
+  );
+}

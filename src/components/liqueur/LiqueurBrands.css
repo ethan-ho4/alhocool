@@ -1,0 +1,21 @@
+.liqueur-brands-title {
+    text-align: left;
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+    color: #FDFCFD;
+}
+
+.liqueur-brands-content {
+    text-align: left;
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+    color: #FDFCFD;
+}
+
+.title-diageo,
+.title-pernod-ricard,
+.title-remy-cointreau,
+.title-campari-group,
+.title-lucas-bols {
+    font-size: 40px;
+}
