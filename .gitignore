@@ -10,14 +10,17 @@ lerna-debug.log*
 # Main
 node_modules
 dist
+frontend/dist
 dist-ssr
 *.local
 .env
 .env.*
 
-# Editor
+# Editor (keep shared VS Code tasks/debug; ignore personal settings)
 .vscode/*
 !.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
 .idea
 .DS_Store
 *.suo
